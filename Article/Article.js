@@ -112,3 +112,49 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function createLambdaNews(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+  const newsArticle = document.createElement('div')
+  const articleTitle = document.createElement('h2')
+  const paraDate = document.createElement('p')
+  const paraOne = document.createElement('p')
+  const paraTwo = document.createElement('p')
+  const paraThree = document.createElement('p')
+  const articleSpan = document.createElement('span')
+
+  newsArticle.appendChild(articleTitle)
+  newsArticle.appendChild(paraDate)
+  newsArticle.appendChild(paraOne)
+  newsArticle.appendChild(paraTwo)
+  newsArticle.appendChild(paraThree)
+  newsArticle.appendChild(articleSpan)
+
+//declaring classes
+newsArticle.classList.add('article')
+paraDate.classList.add('date')
+articleSpan.classList.add('expandButton')
+
+//adding content
+articleTitle.textContent = title;
+paraDate.textContent = date;
+paraOne.textContent = firstParagraph;
+paraTwo.textContent = secondParagraph;
+paraThree.textContent = thirdParagraph;
+
+  return newsArticle
+  
+}
+
+// we want to house everything withing the articles div
+
+const articleComponent = createLambdaNews('test title', 'test date', 'test para1', 'test para2', 'test para3', 'test paraSpan')
+const articleClass = document.querySelector('.articles')
+articleClass.appendChild(articleComponent)
+
+data.forEach(info => {
+  articleClass.appendChild(createLambdaNews(info.title, info.date, info.firstParagraph, info.secondParagraph, info.thirdParagraph))
+})
+
+
+
+// createLambdaNews('test title', 'test date', 'test para1', 'test para2', 'test para3', 'test paraSpan')
