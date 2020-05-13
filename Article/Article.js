@@ -85,7 +85,16 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+  {
+  title: 'My new article',
+  date: 'May 12th, 2020',
+  firstParagraph: `some filler text would go here, just make sure it's super interesting and not at all repetitive. Just make sure it's super interesting and not at all repetitive. Just make sure it's super interesting and not at all repetitive. Just make sure it's super interesting and not at all repetitive. Just make sure it's super interesting and not at all repetitive. Just make sure it's super interesting and not at all repetitive. `,
+
+  secondParagraph: `Just make sure it's super interesting and not at all repetitive. Just make sure it's super interesting and not at all repetitive. Just make sure it's super interesting and not at all repetitive. Just make sure it's super interesting and not at all repetitive. Just make sure it's super interesting and not at all repetitive.`,
+
+  thirdParagraph: `Just make sure it's super interesting and not at all repetitive. Just make sure it's super interesting and not at all repetitive. Just make sure it's super interesting and not at all repetitive. Just make sure it's super interesting and not at all repetitive. Just make sure it's super interesting and not at all repetitive.`
+}
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
@@ -114,6 +123,7 @@ const data = [
 */
 
 function createLambdaNews(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+  //creating elements
   const newsArticle = document.createElement('div')
   const articleTitle = document.createElement('h2')
   const paraDate = document.createElement('p')
@@ -122,6 +132,7 @@ function createLambdaNews(title, date, firstParagraph, secondParagraph, thirdPar
   const paraThree = document.createElement('p')
   const articleSpan = document.createElement('span')
 
+  //adding elements to the dom
   newsArticle.appendChild(articleTitle)
   newsArticle.appendChild(paraDate)
   newsArticle.appendChild(paraOne)
@@ -129,25 +140,32 @@ function createLambdaNews(title, date, firstParagraph, secondParagraph, thirdPar
   newsArticle.appendChild(paraThree)
   newsArticle.appendChild(articleSpan)
 
-//declaring classes
-newsArticle.classList.add('article')
-paraDate.classList.add('date')
-articleSpan.classList.add('expandButton')
+  //declaring classes
+  newsArticle.classList.add('article')
+  paraDate.classList.add('date')
+  articleSpan.classList.add('expandButton')
 
-//adding content
-articleTitle.textContent = title;
-paraDate.textContent = date;
-paraOne.textContent = firstParagraph;
-paraTwo.textContent = secondParagraph;
-paraThree.textContent = thirdParagraph;
 
-  return newsArticle
-  
+  //adding content
+  articleTitle.textContent = title;
+  paraDate.textContent = date;
+  paraOne.textContent = firstParagraph;
+  paraTwo.textContent = secondParagraph;
+  paraThree.textContent = thirdParagraph;
+  const buttonPlaceHolder = '\u2b83'
+  articleSpan.textContent = buttonPlaceHolder
+
+  articleSpan.addEventListener('click', () => {
+    console.log('click')
+
+    newsArticle.classList.toggle('article-open')
+
+  })
+
+  return newsArticle;
 }
 
-// we want to house everything withing the articles div
-
-const articleComponent = createLambdaNews('test title', 'test date', 'test para1', 'test para2', 'test para3', 'test paraSpan')
+const articleComponent = createLambdaNews()
 const articleClass = document.querySelector('.articles')
 articleClass.appendChild(articleComponent)
 
@@ -157,4 +175,3 @@ data.forEach(info => {
 
 
 
-// createLambdaNews('test title', 'test date', 'test para1', 'test para2', 'test para3', 'test paraSpan')
