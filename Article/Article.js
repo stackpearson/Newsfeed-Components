@@ -145,7 +145,6 @@ function createLambdaNews(title, date, firstParagraph, secondParagraph, thirdPar
   paraDate.classList.add('date')
   articleSpan.classList.add('expandButton')
 
-
   //adding content
   articleTitle.textContent = title;
   paraDate.textContent = date;
@@ -155,11 +154,9 @@ function createLambdaNews(title, date, firstParagraph, secondParagraph, thirdPar
   const buttonPlaceHolder = '\u2b83'
   articleSpan.textContent = buttonPlaceHolder
 
+  //adding toggle functionality to expand articles
   articleSpan.addEventListener('click', () => {
-    console.log('click')
-
     newsArticle.classList.toggle('article-open')
-
   })
 
   return newsArticle;
