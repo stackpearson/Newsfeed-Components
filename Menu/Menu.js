@@ -40,12 +40,13 @@ function createMenu(arrayItems) {
   const menuDiv = document.createElement('div')
   const listHolder = document.createElement('ul')
   
-
  //adding content to our list items from the source menuItems
   menuItems.forEach(items => {
     var listItems = document.createElement('li');
+    
     // assigning array text to their respective list items
     listItems.textContent = items
+
     //nesting our <li>'s within our <ul>
     listHolder.appendChild(listItems)
   })
@@ -53,7 +54,7 @@ function createMenu(arrayItems) {
   //nesting our list within our menu div
   menuDiv.appendChild(listHolder)
 
-
+  //adding & adjusting classes
   menuDiv.classList.add('menu')
   
   const menuButton = document.querySelector('.menu-button')

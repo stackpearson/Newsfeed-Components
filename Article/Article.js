@@ -123,6 +123,7 @@ const data = [
 */
 
 function createLambdaNews(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+  
   //creating elements
   const newsArticle = document.createElement('div')
   const articleTitle = document.createElement('h2')
@@ -164,7 +165,6 @@ function createLambdaNews(title, date, firstParagraph, secondParagraph, thirdPar
 
 const articleComponent = createLambdaNews()
 const articleClass = document.querySelector('.articles')
-articleClass.appendChild(articleComponent)
 
 data.forEach(info => {
   articleClass.appendChild(createLambdaNews(info.title, info.date, info.firstParagraph, info.secondParagraph, info.thirdParagraph))
