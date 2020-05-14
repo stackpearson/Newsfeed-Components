@@ -43,7 +43,8 @@ function createMenu(arrayItems) {
  //adding content to our list items from the source menuItems
   menuItems.forEach(items => {
     var listItems = document.createElement('li');
-    
+    listItems.classList.add('listLinks');
+
     // assigning array text to their respective list items
     listItems.textContent = items
 
@@ -57,6 +58,7 @@ function createMenu(arrayItems) {
   //adding & adjusting classes
   menuDiv.classList.add('menu')
   
+  
   const menuButton = document.querySelector('.menu-button')
   menuButton.addEventListener('click', () => {
     // menuDiv.classList.toggle('menu')
@@ -69,3 +71,25 @@ function createMenu(arrayItems) {
 const menuComponent = createMenu()
 const menuButton = document.querySelector('.header')
 menuButton.appendChild(menuComponent)
+
+
+//stretch animation
+// let menuTabs = document.querySelectorAll('.listLinks')
+// menuTabs.forEach(tabs => {
+//   tabs.addEventListener('mouseover', (event) =>{
+//     event.target.gsap.to(".listLinks", {duration: 2, backgroundColor:'gray'})
+//   })
+// })
+let menuTabs = document.querySelectorAll('.listLinks')
+menuTabs.addEventListener('mouseover', (event) =>{
+  event.target.style.color = 'red'
+})
+
+
+// imgSelector.forEach(img => {
+//   img.addEventListener("dblclick", (event) =>{
+//       event.target.style.transform = "rotate(360deg)"
+//       event.target.style.transition = "all 0.5s"
+//   })
+// })
+// gsap.to(".article", {duration: 2, backgroundColor:'gray'})

@@ -158,6 +158,7 @@ function createLambdaNews(title, date, firstParagraph, secondParagraph, thirdPar
   //adding toggle functionality to expand articles
   articleSpan.addEventListener('click', () => {
     newsArticle.classList.toggle('article-open')
+    gsap.to(".article", {duration: 2, backgroundColor:'gray'})
   })
 
   return newsArticle;
@@ -171,4 +172,12 @@ data.forEach(info => {
 })
 
 
+//stretch animation
+
+
+// articleSpan = document.querySelectorAll('.expandButton')
+
+// articleSpan.addEventListener('click', () => {
+//   gsap.to(".article", {duration: 2, backgroundColor:'gray'})
+// })
 
