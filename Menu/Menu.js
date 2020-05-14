@@ -58,6 +58,7 @@ function createMenu(arrayItems) {
   
   const menuButton = document.querySelector('.menu-button')
   menuButton.addEventListener('click', () => {
+    // menuDiv.classList.toggle('menu')
     menuDiv.classList.toggle('menu--open')
   })
 
@@ -65,5 +66,5 @@ function createMenu(arrayItems) {
 }
 
 const menuComponent = createMenu()
-const menuButton = document.querySelector('.menu-button')
+const menuButton = document.querySelector('.header')
 menuButton.appendChild(menuComponent)
