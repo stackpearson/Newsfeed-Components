@@ -73,23 +73,10 @@ const menuButton = document.querySelector('.header')
 menuButton.appendChild(menuComponent)
 
 
-//stretch animation
+
 // let menuTabs = document.querySelectorAll('.listLinks')
-// menuTabs.forEach(tabs => {
-//   tabs.addEventListener('mouseover', (event) =>{
-//     event.target.gsap.to(".listLinks", {duration: 2, backgroundColor:'gray'})
-//   })
+// menuTabs.addEventListener('mouseover', (event) =>{
+//   event.target.style.color = 'red'
 // })
-let menuTabs = document.querySelectorAll('.listLinks')
-menuTabs.addEventListener('mouseover', (event) =>{
-  event.target.style.color = 'red'
-})
 
 
-// imgSelector.forEach(img => {
-//   img.addEventListener("dblclick", (event) =>{
-//       event.target.style.transform = "rotate(360deg)"
-//       event.target.style.transition = "all 0.5s"
-//   })
-// })
-// gsap.to(".article", {duration: 2, backgroundColor:'gray'})
